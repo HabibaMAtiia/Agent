@@ -22,7 +22,7 @@ def cmd_tool(text: str) -> str:
 # --- 2️⃣ Search Tool ---
 search_tool = TavilySearch(
     max_results=3,                     # number of results to retrieve
-    tavily_api_key="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"  # replace with your key
+    tavily_api_key=""  # replace with your key
 )
 
 # --- 3️⃣ Initialize Agent ---
@@ -30,7 +30,7 @@ memory = MemorySaver()
 model = init_chat_model(
     model="gemini-2.5-flash",
     model_provider="google_genai",
-    api_key="AIzaSyChBOk7xWNPUqLGZ9H9LoLiPqxmDPT7nuI"
+    api_key=""
 )
 
 tools = [cmd_tool, search_tool]
@@ -54,3 +54,4 @@ async def main(message: cl.Message):
 
     # Send final concatenated output (optional)
     await msg.update()
+
